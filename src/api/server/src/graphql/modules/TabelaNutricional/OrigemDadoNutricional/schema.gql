@@ -1,0 +1,26 @@
+type OrigemDadoNutricional {
+  idOrigemDadoNutricional:Int
+  nomeOrigemDadoNutricional:String
+  linkFonte: String
+}
+
+type Query {
+  getAllOrigemDadoNutricional: [OrigemDadoNutricional]
+  getLastOrigemDadoNutricional:[OrigemDadoNutricional]
+}
+
+type Mutation {
+  
+  createOrigemDadoNutricional(nomeOrigemDadoNutricional: String,linkFonte: String): Boolean 
+  
+  updateOrigemDadoNutricional(
+    idOrigemDadoNutricional: Int
+    nomeOrigemDadoNutricional: String
+    linkFonte: String
+    
+  ):Boolean
+
+  deleteOrigemDadoNutricional(idOrigemDadoNutricional:[Int]): Boolean
+}
+
+

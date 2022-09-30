@@ -1,0 +1,35 @@
+scalar Date
+type MassaCorporal {
+  idMassaCorporal: Int
+  idProfileUser: Int
+  massaCorporalCadastrada: Float
+  idWorkout: Int
+  dataMassaCorporal: Date
+}
+
+type Query {
+  getAllMassaCorporal: [MassaCorporal]
+  getLastMassaCorporal: [MassaCorporal]
+  getMassaCorporalById(idMassaCorporal: Int): [MassaCorporal]
+  getMassaCorporalByDate(dataMassaCorporalInicial: Date,dataMassaCorporalFinal: Date): [MassaCorporal]
+}
+
+type Mutation {
+  createMassaCorporal(
+    idMassaCorporal: Int
+    idProfileUser: Int
+    massaCorporalCadastrada: Float
+    idWorkout: Int
+    dataMassaCorporal: Date
+  ): Boolean
+
+  updateMassaCorporal(
+    idMassaCorporal: Int
+    idProfileUser: Int
+    massaCorporalCadastrada: Float
+    idWorkout: Int
+    dataMassaCorporal: Date
+  ): Boolean
+
+  deleteMassaCorporal(idMassaCorporal: [Int]): Boolean
+}

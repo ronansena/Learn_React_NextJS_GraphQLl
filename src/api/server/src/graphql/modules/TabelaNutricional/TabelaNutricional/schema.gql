@@ -1,0 +1,107 @@
+scalar Date
+type TabelaNutricional {
+  idAlimento: Int
+  idGrupoAlimento: Int
+  idOrigemDadoNutricional: Int
+  numeroAlimento: Int
+  nomeGrupoAlimento: String
+  nomeOrigemDadoNutricional: String
+  descricaoAlimento: String
+  qtdeConsumoSugerida: Float
+  umidade: Float
+  energiaKcal: Float
+  energiaKj: Float
+  proteina: Float
+  lipideos: Float
+  colesterol: Float
+  carboidrato: Float
+  fibraAlimentar: Float
+  cinzas: Float
+  calcio: Float
+  magnesio: Float
+  manganes: Float
+  fosforo: Float
+  ferro: Float
+  sodio: Float
+  potassio: Float
+  cobre: Float
+  zinco: Float
+  retinol: Float
+  re: Float
+  rae: Float
+  tiamina: Float
+  riboflavina: Float
+  piridoxina: Float
+  niacina: Float
+  vitaminaC: Float
+  created_at: Date
+  updated_at: Date
+  idProdutoControlMoney: Int
+  pesoEmbalagem: Float
+  preco: Float
+  dataUltimaCotacaoPreco: Date
+}
+
+type Query {
+  getAllTabelaNutricional: [TabelaNutricional]
+  getAllTabelaNutricionalDescricaoAlimento: [TabelaNutricional]
+  getLastTabelaNutricional: [TabelaNutricional]
+  getTabelaNutricionalById(idAlimento: Int): [TabelaNutricional]
+}
+
+type Mutation {
+  createTabelaNutricional(
+    idAlimento: Int
+    idGrupoAlimento: Int
+    idOrigemDadoNutricional: Int
+    numeroAlimento: Int
+    descricaoAlimento: String
+    qtdeConsumoSugerida: Float
+    umidade: Float
+    energiaKcal: Float
+    energiaKj: Float
+    proteina: Float
+    lipideos: Float
+    colesterol: Float
+    carboidrato: Float
+    fibraAlimentar: Float
+    cinzas: Float
+    calcio: Float
+    magnesio: Float
+    manganes: Float
+    fosforo: Float
+    ferro: Float
+    sodio: Float
+    potassio: Float
+    cobre: Float
+    zinco: Float
+    retinol: Float
+    re: Float
+    rae: Float
+    tiamina: Float
+    riboflavina: Float
+    piridoxina: Float
+    niacina: Float
+    vitaminaC: Float
+    created_at: Date
+    updated_at: Date
+  ): Boolean
+
+  updateTabelaNutricional(
+    idAlimento: Int
+    idGrupoAlimento: Int
+    idOrigemDadoNutricional: Int
+    descricaoAlimento: String
+    qtdeConsumoSugerida: Float
+    energiaKcal: Float
+    proteina: Float
+    lipideos: Float
+    carboidrato: Float
+    fibraAlimentar: Float
+    calcio: Float
+    sodio: Float
+    updated_at: Date
+  ): Boolean
+
+  deleteTabelaNutricional(idAlimento: [Int]): Boolean
+}

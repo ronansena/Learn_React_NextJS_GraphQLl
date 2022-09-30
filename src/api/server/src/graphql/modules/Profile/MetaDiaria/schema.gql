@@ -1,0 +1,61 @@
+scalar Date
+type MetaDiaria {
+  idMetaDiaria: Int
+  idProfileUser: Int
+  idStatusCadastro: Int
+  custoMensalPrevisto: Float
+  dtCadastro: Date
+  energiaKcal: Float
+  proteina: Float
+  lipideos: Float
+  colesterol: Float
+  carboidrato: Float
+  fibraAlimentar: Float
+  calcio: Float
+  ferro: Float
+  sodio: Float
+}
+
+type Query {
+  getAllMetaDiaria: [MetaDiaria]
+  getLastMetaDiaria: [MetaDiaria]
+  getMetaDiariaById(idMetaDiaria: Int): [MetaDiaria]
+}
+
+type Mutation {
+  createMetaDiaria(
+    idMetaDiaria: Int
+    idProfileUser: Int
+    idStatusCadastro: Int
+    custoMensalPrevisto: Float
+    dtCadastro: Date
+    energiaKcal: Float
+    proteina: Float
+    lipideos: Float
+    colesterol: Float
+    carboidrato: Float
+    fibraAlimentar: Float
+    calcio: Float
+    ferro: Float
+    sodio: Float
+  ): Boolean
+
+  updateMetaDiaria(
+    idMetaDiaria: Int
+    idProfileUser: Int
+    idStatusCadastro: Int
+    custoMensalPrevisto: Float
+    dtCadastro: Date
+    energiaKcal: Float
+    proteina: Float
+    lipideos: Float
+    colesterol: Float
+    carboidrato: Float
+    fibraAlimentar: Float
+    calcio: Float
+    ferro: Float
+    sodio: Float
+  ): Boolean
+
+  deleteMetaDiaria(idMetaDiaria: [Int]): Boolean
+}

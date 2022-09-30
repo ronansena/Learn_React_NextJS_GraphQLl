@@ -1,0 +1,31 @@
+scalar Date
+type ConsumoDiario {
+  idConsumoNutricionalDiario: Int
+  idAlimento: Int
+  idMetaDiaria: Int
+  idProfileUser: Int
+  descricaoAlimento: String
+  qtdePesoConsumidaExec: Float  
+  dtConsumoExec: Date
+  energiaKcal: Float
+  proteina: Float
+  lipideos: Float
+  colesterol: Float
+  carboidrato: Float
+  fibraAlimentar: Float
+  calcio: Float
+  ferro: Float
+  sodio: Float	
+	idProdutoControlMoney:Int
+	pesoEmbalagem:Float	
+	preco:Float
+	dataUltimaCotacaoPreco: Date
+  quantidadeTotalConsumida:Float
+  custoItem:Float
+}
+
+type Query {  
+  getConsumoReportQuant(dtConsumoExecInicial: Date,dtConsumoExecFinal: Date): [ConsumoDiario]  
+}
+
+

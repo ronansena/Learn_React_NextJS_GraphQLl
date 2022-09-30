@@ -1,0 +1,25 @@
+type GrupoAlimento {
+  idGrupoAlimento:Int
+  nomeGrupoAlimento:String
+  
+}
+
+type Query {
+  getAllGrupoAlimento: [GrupoAlimento]
+  getLastGrupoAlimento:[GrupoAlimento]
+}
+
+type Mutation {
+  
+  createGrupoAlimento(nomeGrupoAlimento: String): Boolean 
+  
+  updateGrupoAlimento(
+    idGrupoAlimento: Int
+    nomeGrupoAlimento: String
+    
+  ):Boolean
+
+  deleteGrupoAlimento(idGrupoAlimento:[Int]): Boolean
+}
+
+

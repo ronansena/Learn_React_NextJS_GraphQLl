@@ -1,0 +1,56 @@
+scalar Date
+type GrupoRefeicao {
+  idGrupoRefeicao: Int
+  nomeGrupoRefeicao: String
+  pesoTotalGrupoRefeicao: Float
+  pesoTotalConsumidoGrupoRefeicao: Float
+  observacao: String
+}
+
+type ItemGrupoRefeicao {
+  idRefeicoes: Int
+  idAlimento: Int
+  idGrupoRefeicao: Int
+  qtdePesoPreparoRefeicao: Float
+  descricaoAlimento: String
+  pesoTotalGrupoRefeicao: Float
+  pesoTotalConsumidoGrupoRefeicao: Float
+  observacao: String
+}
+
+type Query {
+  getAllGrupoRefeicao: [GrupoRefeicao]
+  getLastGrupoRefeicao: [GrupoRefeicao]
+  getItemRefeicaoByID(idGrupoRefeicao: Int): [ItemGrupoRefeicao]
+}
+
+type Mutation {
+  createGrupoRefeicao(
+    idGrupoRefeicao: Int
+    nomeGrupoRefeicao: String
+    pesoTotalGrupoRefeicao: Float
+    observacao: String
+  ): Boolean
+
+  createItemRefeicao(
+    idAlimento: Int
+    idGrupoRefeicao: Int
+    qtdePesoPreparoRefeicao: Float
+  ): Boolean
+
+  updateGrupoRefeicao(
+    idGrupoRefeicao: Int
+    nomeGrupoRefeicao: String
+    pesoTotalGrupoRefeicao: Float
+    pesoTotalConsumidoGrupoRefeicao: Float
+    observacao: String
+  ): Boolean
+
+  updateOnlyPesoConsumidoGR(
+    idGrupoRefeicao: Int
+    pesoTotalConsumidoGrupoRefeicao: Float
+  ): Boolean
+
+  deleteItemRefeicao(idGrupoRefeicao: [Int]): Boolean
+  deleteGrupoRefeicao(idGrupoRefeicao: [Int]): Boolean
+}

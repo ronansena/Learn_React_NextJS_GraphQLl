@@ -1,0 +1,31 @@
+scalar Date
+type Sleep {
+  idSleep: Int
+  idProfileUser: Int
+  dtFallAsleep: Date
+  dtWakeUp: Date
+}
+
+type Query {
+  getAllSleep: [Sleep]
+  getLastSleep: [Sleep]
+  getSleepById(idSleep: Int): [Sleep]  
+}
+
+type Mutation {
+  createSleep(
+    idSleep: Int
+    idProfileUser: Int
+    dtFallAsleep: Date
+    dtWakeUp: Date
+  ): Boolean
+
+  updateSleep(
+    idSleep: Int
+    idProfileUser: Int
+    dtFallAsleep: Date
+    dtWakeUp: Date
+  ): Boolean
+
+  deleteSleep(idSleep: [Int]): Boolean
+}

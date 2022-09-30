@@ -1,0 +1,53 @@
+scalar Date
+type ConsumoDiario {
+  idConsumoNutricionalDiario: Int
+  idAlimento: Int
+  idMetaDiaria: Int
+  idProfileUser: Int
+  descricaoAlimento: String
+  qtdePesoConsumidaExec: Float  
+  dtConsumoExec: Date
+  energiaKcal: Float
+  proteina: Float
+  lipideos: Float
+  colesterol: Float
+  carboidrato: Float
+  fibraAlimentar: Float
+  calcio: Float
+  ferro: Float
+  sodio: Float	
+	idProdutoControlMoney:Int
+	pesoEmbalagem:Float	
+	preco:Float
+	dataUltimaCotacaoPreco: Date
+  quantidadeTotalConsumida:Float
+}
+
+type Query {
+  getAllConsumoDiario: [ConsumoDiario]
+  getLastConsumoDiario: [ConsumoDiario]
+  getConsumoByDate(dtConsumoExec: Date): [ConsumoDiario]
+  getItemRefeicaoConsumoDiarioByID(limit: Int): [ConsumoDiario]
+  getConsumoByDateInicialFinal(dtConsumoExecInicial: Date,dtConsumoExecFinal: Date): [ConsumoDiario]  
+}
+
+type Mutation {
+  createConsumoDiario(
+    idAlimento: Int
+    idMetaDiaria: Int
+    idProfileUser: Int
+    qtdePesoConsumidaExec: Float    
+    dtConsumoExec: Date
+  ): Boolean
+
+  updateConsumoDiario(
+    idConsumoNutricionalDiario: Int
+    idAlimento: Int
+    idMetaDiaria: Int
+    idProfileUser: Int
+    qtdePesoConsumidaExec: Float    
+    dtConsumoExec: Date
+  ): Boolean
+
+  deleteConsumoDiario(idConsumoNutricionalDiario: [Int]): Boolean
+}

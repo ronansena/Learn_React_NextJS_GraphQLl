@@ -1,0 +1,13 @@
+{
+      "presets": [
+      "@babel/preset-env","next/babel"
+    ],
+    "plugins": [["styled-components", { "ssr": true }]],
+    "env": {
+      "development": {
+        "sourceMaps": "inline",
+        "retainLines": true
+      }
+    }
+  }
+  

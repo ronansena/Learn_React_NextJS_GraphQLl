@@ -1,0 +1,193 @@
+.pagelanding{
+
+    width: 100vw;
+    height: 100vh;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-in-primary);
+    background:var(--color-primary);
+
+}
+
+.logocontainer img{
+        
+   height: 10rem;   
+   
+}
+
+.heroimage{
+
+    width:100%;
+
+}
+
+
+.logocontainer{
+
+    text-align: center;
+    margin-bottom: 3.2rem;
+
+}
+
+.logocontainer h2{
+
+    font-weight:500;
+    font-size:2.4rem;
+    line-height: 4.6rem;
+    margin-top: 8.8rem;
+
+}
+
+.buttonscontainer{
+
+        display: flex;
+        justify-content: center;
+        margin:3.2rem 0;
+
+}
+
+.buttonscontainer a {
+
+        width: 30rem;
+        height: 10.4rem;
+        border-radius: 8.8rem;
+        margin-right: 1.6rem;
+        font: 700 2.0rem Archivo;
+
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        
+        text-decoration:none;
+        color: var(--colo-button-text);
+        transition: background-color 0.2s;
+}
+
+.buttonscontainer a:first-child{
+
+    margin-right: 1.6rem;
+
+}
+
+.buttonscontainer a img{
+
+    width:4rem;
+
+}
+
+.buttonscontainer a.pesquisar{
+
+    background: var(--color-primary-lighter);
+
+}
+
+
+.buttonscontainer a.cadastrar{
+
+    background: var(--color-secundary);
+
+}
+
+
+.buttonscontainer a.pesquisar:hover{
+
+    background: var(--color-primary-light);
+
+}
+
+
+.buttonscontainer a.cadastrar:hover{
+
+    background: var(--color-secundary-dark);
+
+}
+
+.buttonscontainer a img{
+
+    margin-right: 2.4rem;
+
+}
+
+.total-connctions{
+
+    font-size:1.4rem;
+
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    
+}
+
+.total-connctions img{
+
+    margin-left:0.8rem;
+
+}
+
+@media(min-width:1100px){
+
+    .pagelandingcontent{
+
+        max-width: 1100px;
+        display: grid;
+        grid-template-rows: 350px 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-areas: 
+            "logo hero hero"
+            "buttons buttons total"
+        ;
+    }
+
+    .logocontainer{
+        
+        grid-area:logo;
+        align-self: center;
+        text-align:left;
+        margin:0;
+
+    }
+
+    .logocontainer h2{
+        
+       text-align:initial;
+       font-size: 3.6rem;
+
+    }
+
+    .logocontainer img{
+        
+       height:100%;
+
+ 
+     }
+
+
+    .heroimage{
+        
+        grid-area:hero;
+        justify-self: end;
+
+    }
+
+    .buttonscontainer{
+
+        grid-area:buttons;
+        justify-content: flex-start;
+    }
+
+    .buttonscontainer a {
+
+       font-size: 2.4rem;
+    }
+
+    .total-connctions{
+
+        grid-area:total;
+        justify-self: end;
+
+    }
+
+
+}
